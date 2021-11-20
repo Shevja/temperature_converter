@@ -1,4 +1,4 @@
-require '../lib/error_handler'
+require './lib/error_handler'
 
 class IOInterface
   def initialize
