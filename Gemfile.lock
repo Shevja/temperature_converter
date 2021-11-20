@@ -13,6 +13,7 @@ GEM
     diff-lcs (1.4.4)
     docile (1.4.0)
     ffi (1.15.3)
+    ffi (1.15.3-x86-mingw32)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     language_server-protocol (3.16.0.1)
@@ -78,6 +79,7 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  x86-mingw32
   x86_64-darwin-20
 
 DEPENDENCIES
@@ -89,4 +91,4 @@ DEPENDENCIES
   steep
 
 BUNDLED WITH
-   2.2.25
+   2.2.31
