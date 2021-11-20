@@ -1,7 +1,7 @@
-require '../lib/io_interface'
+require './lib/io_interface'
 
 RSpec.describe IOInterface do
-  $stdin = File.open('../test/data.txt')
+  $stdin = File.open('./test/data.txt')
 
   describe '#input_value' do
     subject { IOInterface.new.input_value }

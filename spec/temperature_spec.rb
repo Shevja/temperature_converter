@@ -1,4 +1,4 @@
-require '../lib/temperature'
+require './lib/temperature'
 
 RSpec.describe Temperature do
   describe '#converter' do

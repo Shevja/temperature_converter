@@ -1,4 +1,4 @@
-require '../lib/error_handler'
+require './lib/error_handler'
 
 RSpec.describe ErrorHanlder do
   describe '#check_value' do
@@ -21,6 +21,18 @@ RSpec.describe ErrorHanlder do
 
     context 'Incorrect temperature scale' do
       subject { ErrorHanlder.new.check_correct_scale('test') }
+      it { is_expected.to eq false }
+    end
+  end
+
+  describe '#check_repeating_scale' do
+    context 'Repeat scale' do
+      subject { ErrorHanlder.new.check_repeating_scale('F', 'C') }
+      it { is_expected.to eq true }
+    end
+
+    context 'Non-repeat scale' do
+      subject { ErrorHanlder.new.check_repeating_scale('F', 'F') }
       it { is_expected.to eq false }
     end
   end
