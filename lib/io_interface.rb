@@ -1,4 +1,4 @@
-require './lib/error_handler'
+require '../lib/error_handler'
 
 class IOInterface
   def initialize
@@ -7,7 +7,7 @@ class IOInterface
 
   def input_source_scale
     puts 'Input source scale: ("C", "F", "K")'
-    source_scale = gets.chomp.upcase
+    source_scale = $stdin.gets.chomp.upcase
 
     if @error_handler.check_correct_scale(source_scale)
       source_scale
@@ -18,7 +18,7 @@ class IOInterface
 
   def input_target_scale(source_scale)
     puts 'Input final scale:'
-    target_scale = gets.chomp.upcase
+    target_scale = $stdin.gets.chomp.upcase
 
     if  @error_handler.check_correct_scale(target_scale) &&
         @error_handler.check_repeating_scale(source_scale, target_scale)
@@ -30,7 +30,7 @@ class IOInterface
 
   def input_value
     puts 'Input value:'
-    value = gets
+    value = $stdin.gets
 
     if @error_handler.check_value(value)
       value.to_f
@@ -45,7 +45,7 @@ class IOInterface
 
   def check_exit
     puts 'Continue? (Y/N)'
-    state = gets.chomp.upcase
+    state = $stdin.gets.chomp.upcase
 
     case state
     when 'N'
