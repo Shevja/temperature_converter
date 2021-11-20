@@ -24,16 +24,4 @@ RSpec.describe ErrorHanlder do
       it { is_expected.to eq false }
     end
   end
-
-  describe '#check_repeating_scale' do
-    context 'Non-repeating temperature scale' do
-      subject { ErrorHanlder.new.check_repeating_scale('F', 'C') }
-      it { is_expected.to eq true }
-    end
-
-    context 'Repeating temperature scale' do
-      subject { ErrorHanlder.new.check_repeating_scale('F', 'F') }
-      it { is_expected.to eq false }
-    end
-  end
 end
